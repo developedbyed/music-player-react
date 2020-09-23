@@ -11,6 +11,7 @@ function App() {
       cover:
         "https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg",
       artist: "Aso, Middle School, Aviino",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
     },
     {
       name: "Daylight",
@@ -39,11 +40,17 @@ function App() {
     },
   ]);
   const [currentSong, setCurrentSong] = useState(songs[0]);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div className="App">
       <Song currentSong={currentSong} />
-      <Player />
+      <Player
+        setIsPlaying={setIsPlaying}
+        currentSong={currentSong}
+        songs={songs}
+        isPlaying={isPlaying}
+      />
     </div>
   );
 }
