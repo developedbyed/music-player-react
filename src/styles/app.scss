@@ -8,6 +8,9 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+h1 {
+  font-size: 1rem;
+}
 h2 {
   color: rgb(51, 51, 51);
 }
@@ -20,3 +23,4 @@ h4 {
 @import "./song";
 @import "./player";
 @import "./library";
+@import "./nav";
