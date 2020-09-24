@@ -47,7 +47,9 @@ const Player = ({
           max={songInfo.duration || 0}
           min={0}
           onChange={dragHandler}
-          style={{ backgroundColor: currentSong.color }}
+          style={{
+            background: `linear-gradient(to right,${currentSong.color[0]},${currentSong.color[1]} )`,
+          }}
         />
         <p>{getTime(songInfo.duration)}</p>
       </div>
