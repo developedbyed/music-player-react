@@ -1,0 +1,29 @@
+.library {
+  position: fixed;
+  box-shadow: 2px 2px 50px rgb(221, 221, 221);
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  padding: 2rem;
+  overflow: scroll;
+}
+
+.library-song {
+  display: flex;
+  align-items: center;
+  padding: 3rem 0rem 1rem 0rem;
+  img {
+    width: 30%;
+  }
+}
+.song-description {
+  padding-left: 1rem;
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 0.7rem;
+  }
+}

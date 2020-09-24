@@ -11,10 +11,12 @@ body {
 h2 {
   color: rgb(51, 51, 51);
 }
-h3 {
+h3,
+h4 {
   color: rgb(100, 100, 100);
   font-weight: 400;
 }
 
 @import "./song";
 @import "./player";
+@import "./library";
