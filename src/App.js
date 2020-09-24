@@ -19,6 +19,7 @@ function App() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
       color: "#205950",
       id: uuidv4(),
+      active: true,
     },
     {
       name: "Daylight",
@@ -28,6 +29,7 @@ function App() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
       color: "#EF8EA9",
       id: uuidv4(),
+      active: false,
     },
     {
       name: "Keep Going",
@@ -37,6 +39,7 @@ function App() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=9222",
       color: "#CD607D",
       id: uuidv4(),
+      active: false,
     },
     {
       name: "Nightfall",
@@ -46,6 +49,7 @@ function App() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=9148",
       color: "#EF8EA9",
       id: uuidv4(),
+      active: false,
     },
     {
       name: "Reflection",
@@ -55,6 +59,7 @@ function App() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=9228",
       color: "#CD607D",
       id: uuidv4(),
+      active: false,
     },
     {
       name: "Under the City Stars",
@@ -64,6 +69,7 @@ function App() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=10074",
       color: "#205950",
       id: uuidv4(),
+      active: false,
     },
   ]);
   const [currentSong, setCurrentSong] = useState(songs[0]);
@@ -97,6 +103,7 @@ function App() {
         setCurrentSong={setCurrentSong}
         audioRef={audioRef}
         isPlaying={isPlaying}
+        setSongs={setSongs}
       />
       <audio
         onLoadedMetadata={timeUpdateHandler}

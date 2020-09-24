@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -13,6 +13,7 @@ const Player = ({
   audioRef,
   songInfo,
   setSongInfo,
+  currentSong,
 }) => {
   //Event Handlers
 
@@ -46,6 +47,7 @@ const Player = ({
           max={songInfo.duration || 0}
           min={0}
           onChange={dragHandler}
+          style={{ backgroundColor: currentSong.color }}
         />
         <p>{getTime(songInfo.duration)}</p>
       </div>
