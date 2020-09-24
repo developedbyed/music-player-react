@@ -11,16 +11,7 @@ const Player = ({ currentSong, songs, isPlaying, setIsPlaying }) => {
   //Ref
   const audioRef = useRef(null);
   //Event Handlers
-  const playSongHandler = () => {
-    if (isPlaying) {
-      console.log("not playing");
-      audioRef.current.pause();
-      setIsPlaying(!isPlaying);
-    } else {
-      audioRef.current.play();
-      setIsPlaying(!isPlaying);
-    }
-  };
+
   //State
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
@@ -30,7 +21,7 @@ const Player = ({ currentSong, songs, isPlaying, setIsPlaying }) => {
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
-    console.log(e.target.currentTime);
+
     setSongInfo({ ...songInfo, currentTime: current, duration: duration });
   };
 
@@ -40,9 +31,18 @@ const Player = ({ currentSong, songs, isPlaying, setIsPlaying }) => {
     );
   }
   const dragHandler = (e) => {
-    console.log(e.target.value);
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
+  };
+
+  const playSongHandler = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(!isPlaying);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(!isPlaying);
+    }
   };
 
   return (

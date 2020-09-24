@@ -18,12 +18,13 @@
   align-items: center;
   padding: 1rem 2rem 1rem 2rem;
   cursor: pointer;
+  transition: all 0.5s ease-out;
 
   img {
     width: 30%;
   }
   &:hover {
-    background: rgb(226, 234, 255);
+    background: rgb(255, 226, 245);
   }
 }
 .song-description {
