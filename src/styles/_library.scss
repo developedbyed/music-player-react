@@ -6,16 +6,24 @@
   left: 0;
   width: 20rem;
   height: 100%;
-  padding: 2rem;
   overflow: scroll;
+  background: white;
+  h2 {
+    padding: 2rem;
+  }
 }
 
 .library-song {
   display: flex;
   align-items: center;
-  padding: 3rem 0rem 1rem 0rem;
+  padding: 1rem 2rem 1rem 2rem;
+  cursor: pointer;
+
   img {
     width: 30%;
+  }
+  &:hover {
+    background: rgb(226, 234, 255);
   }
 }
 .song-description {
@@ -26,4 +34,24 @@
   h4 {
     font-size: 0.7rem;
   }
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
 }
