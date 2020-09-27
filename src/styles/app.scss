@@ -7,6 +7,12 @@
 body {
   font-family: "Lato", sans-serif;
 }
+.App {
+  transition: all 0.5s ease;
+}
+.library-active {
+  margin-left: 30%;
+}
 
 h1 {
   font-size: 1rem;
