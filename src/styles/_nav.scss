@@ -15,4 +15,16 @@ nav {
       color: white;
     }
   }
+  .library-active {
+    background: rgb(65, 65, 65);
+    color: white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    button {
+      z-index: 10;
+    }
+  }
 }

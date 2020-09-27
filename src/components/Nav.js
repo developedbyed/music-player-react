@@ -6,10 +6,14 @@ const Nav = ({ setLibraryStatus, libraryStatus }) => {
   const openLibraryHandler = () => {
     setLibraryStatus(!libraryStatus);
   };
+
   return (
     <nav>
       <h1>Waves</h1>
-      <button onClick={openLibraryHandler}>
+      <button
+        className={libraryStatus ? "library-active" : ""}
+        onClick={openLibraryHandler}
+      >
         Library
         <FontAwesomeIcon icon={faMusic}></FontAwesomeIcon>
       </button>

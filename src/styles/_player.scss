@@ -27,8 +27,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  width: 30%;
   svg {
-    margin: 0rem 5rem;
     cursor: pointer;
   }
 }
@@ -44,4 +44,13 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+  .play-control {
+    width: 80%;
+  }
 }
