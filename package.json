@@ -11,9 +11,8 @@
     "@testing-library/user-event": "^7.2.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
-    "react-dark-mode-toggle": "0.0.10",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^4.0.0",
     "uuid": "^8.3.0"
   },
   "scripts": {
