@@ -31,6 +31,7 @@ const LibrarySong = ({
       }
     });
     setSongs(newSongs);
+
     //Play audio
     playAudio(isPlaying, audioRef);
   };
