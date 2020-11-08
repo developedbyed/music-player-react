@@ -6,7 +6,7 @@ import {
   faAngleRight,
   faPause,
   faRandom,
-  faRedo,
+  // faRedo,
   faVolumeDown,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -149,12 +149,12 @@ const Player = ({
           icon={faAngleRight}
           onClick={() => skipTrackHandler("skip-forward")}
         />
-        <FontAwesomeIcon
+        {/* <FontAwesomeIcon
           size="2x"
           icon={faRedo}
           color={loop === "repeat" ? currentSong.color[1] : undefined}
           onClick={() => setLoopHandler("repeat")}
-        />
+        /> */}
         <FontAwesomeIcon
           onClick={() => setActiveVolume(!activeVolume)}
           icon={faVolumeDown}
