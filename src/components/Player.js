@@ -5,6 +5,8 @@ import {
   faAngleLeft,
   faAngleRight,
   faPause,
+  faRandom,
+  // faRedo,
   faVolumeDown,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,6 +22,8 @@ const Player = ({
   songs,
   setCurrentSong,
   setSongs,
+  loop,
+  setLoop
 }) => {
   const [activeVolume, setActiveVolume] = useState(false);
   //UseEffect Update List
@@ -52,7 +56,7 @@ const Player = ({
   }
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
-    setSongInfo({ ...songInfo, currentTime: e.target.value });
+    setSongInfo({ ...songInfo, currentTime: Number(e.target.value) });
   };
 
   const playSongHandler = () => {
@@ -90,6 +94,15 @@ const Player = ({
     setSongInfo({ ...songInfo, volume: value });
   };
 
+  const setLoopHandler = (type) => {
+    if(loop === type){
+      setLoop(null)
+    }
+    else{
+      setLoop(type)
+    }
+  }
+
   return (
     <div className="player">
       <div className="time-control">
@@ -113,6 +126,12 @@ const Player = ({
       </div>
       <div className="play-control">
         <FontAwesomeIcon
+          size="2x"
+          icon={faRandom}
+          color={loop === "random" ? currentSong.color[1] : undefined}
+          onClick={() => setLoopHandler("random")}
+        />
+        <FontAwesomeIcon
           onClick={() => skipTrackHandler("skip-back")}
           className="skip-back"
           size="2x"
@@ -130,6 +149,12 @@ const Player = ({
           icon={faAngleRight}
           onClick={() => skipTrackHandler("skip-forward")}
         />
+        {/* <FontAwesomeIcon
+          size="2x"
+          icon={faRedo}
+          color={loop === "repeat" ? currentSong.color[1] : undefined}
+          onClick={() => setLoopHandler("repeat")}
+        /> */}
         <FontAwesomeIcon
           onClick={() => setActiveVolume(!activeVolume)}
           icon={faVolumeDown}

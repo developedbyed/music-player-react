@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./styles/app.scss";
 //Import Components
 import Player from "./components/Player";
@@ -17,6 +17,7 @@ function App() {
   const [songs, setSongs] = useState(chillhop());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [loop, setLoop] = useState(null)
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
@@ -46,6 +47,24 @@ function App() {
     playAudio(isPlaying, audioRef);
     return;
   };
+  const loopHandler = () => {
+    if(songInfo.currentTime === songInfo.duration){
+      if(loop === "repeat"){
+        setSongInfo(prevState => ({
+          ...prevState,
+          currentTime: 0
+        }))
+      }
+      else if(loop === "random"){
+        setCurrentSong(songs[Math.floor(Math.random() * songs.length)])
+      }
+    }
+    else if(songInfo.currentTime === 0 && isNaN(songInfo.duration) === false && loop !== null){
+      audioRef.current.play();
+    }
+  }
+
+  useEffect(loopHandler, [songInfo, loop])
   return (
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
@@ -60,6 +79,8 @@ function App() {
         songs={songs}
         setSongs={setSongs}
         setCurrentSong={setCurrentSong}
+        loop={loop}
+        setLoop={setLoop}
       />
       <Library
         songs={songs}
